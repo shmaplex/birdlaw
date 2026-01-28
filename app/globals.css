@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 24 15 8;
+    --foreground: 46 41 30;
+    --card: 24 15 8;
+    --card-foreground: 46 41 30;
+    --popover: 24 15 8;
+    --popover-foreground: 46 41 30;
+    --primary: 43 40 15;
+    --primary-foreground: 46 41 30;
+    --secondary: 46 41 30;
+    --secondary-foreground: 43 40 15;
+    --muted: 46 41 30;
+    --muted-foreground: 168 153 104;
+    --accent: 46 41 30;
+    --accent-foreground: 43 40 15;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 46 41 30;
+    --border: 46 41 30;
+    --input: 46 41 30;
+    --ring: 43 40 15;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Courier+Prime:wght@400;700&display=swap');
