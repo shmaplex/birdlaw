@@ -25,7 +25,7 @@ export default function GiphyGallery() {
       try {
         // Using Giphy's public beta API key for demo purposes
         // In production, you should use your own API key from https://developers.giphy.com/
-        const apiKey = 'YOUR_GIPHY_API_KEY'; // Replace with actual key
+        const apiKey = process.env.NEXT_PUBLIC_GIPHY_API_KEY; // Replace with actual key
         const searchTerms = [
           'charlie kelly bird law',
           'its always sunny bird',
@@ -63,7 +63,7 @@ export default function GiphyGallery() {
 
   if (loading) {
     return (
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {[1, 2, 3].map((i) => (
           <Card key={i} className="h-48 animate-pulse bg-[#2c1810]" />
         ))}
@@ -74,16 +74,16 @@ export default function GiphyGallery() {
   // Fallback content when no API key is provided
   if (gifs.length === 0) {
     return (
-      <div className="text-center py-8">
+      <div className="py-8 text-center">
         <div className="text-[#a89968] mb-4">
-          <p className="text-lg mb-2">🦅 Charlie Kelly's Greatest Moments 🦅</p>
+          <p className="mb-2 text-lg">🦅 Charlie Kelly's Greatest Moments 🦅</p>
           <p className="text-sm italic">
             "I'm not saying I agree with it. It's just that bird law in this country—it's not governed by reason."
           </p>
         </div>
         <div className="mt-6 text-[#4a4a3a] text-sm">
           <p>To display GIFs from It's Always Sunny:</p>
-          <ol className="list-decimal list-inside mt-2 space-y-1">
+          <ol className="mt-2 space-y-1 list-decimal list-inside">
             <li>Get a free API key from <a href="https://developers.giphy.com/" target="_blank" rel="noopener noreferrer" className="text-[#d4af37] hover:underline">developers.giphy.com</a></li>
             <li>Replace 'YOUR_GIPHY_API_KEY' in components/GiphyGallery.tsx</li>
             <li>Redeploy to see Charlie Kelly in action!</li>
@@ -94,7 +94,7 @@ export default function GiphyGallery() {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
       {gifs.map((gif) => (
         <Card key={gif.id} className="overflow-hidden group cursor-pointer hover:border-[#d4af37] transition-all">
           <div className="relative aspect-video">
@@ -102,7 +102,7 @@ export default function GiphyGallery() {
               src={gif.images.fixed_height.url}
               alt={gif.title}
               fill
-              className="object-cover group-hover:scale-105 transition-transform duration-300"
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
               unoptimized // GIFs need unoptimized flag
             />
           </div>
