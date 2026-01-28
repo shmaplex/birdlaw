@@ -17,9 +17,9 @@ export default function Home() {
       {/* Texture overlay */}
       <div className="fixed inset-0 opacity-[0.03] pointer-events-none bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(244,228,193,0.5)_2px,rgba(244,228,193,0.5)_4px)]" />
       
-      <div className="relative z-10 container mx-auto px-4 py-8 max-w-6xl">
+      <div className="container relative z-10 max-w-6xl px-4 py-8 mx-auto">
         {/* Header */}
-        <header className="text-center mb-12 animate-fade-in">
+        <header className="mb-12 text-center animate-fade-in">
           <div className="inline-flex items-center justify-center gap-4 mb-4">
             <span className="text-6xl animate-bounce">🦅</span>
             <h1 className="text-5xl md:text-7xl font-bold text-[#d4af37] font-['Crimson_Text'] tracking-wide drop-shadow-[3px_3px_0_rgba(0,0,0,0.5)]">
@@ -46,15 +46,15 @@ export default function Home() {
         </Card>
 
         {/* GIF Gallery */}
-        <div className="mb-12">
+        {/* <div className="mb-12">
           <h2 className="text-3xl font-bold text-[#d4af37] font-['Crimson_Text'] mb-6 text-center">
             Charlie Kelly's Greatest Legal Moments
           </h2>
           <GiphyGallery />
-        </div>
+        </div> */}
 
         {/* Features */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div className="grid gap-6 mb-12 md:grid-cols-3">
           <Card className="border-2 border-[#4a4a3a] hover:border-[#d4af37] transition-all">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-xl">
@@ -174,7 +174,7 @@ SETTLE WITH pigeon FOR relocation to designated pigeon zone`}
         <footer className="mt-16 text-center text-[#a89968] italic pb-8">
           <p className="mb-2">"Filibuster. I'm going to object."</p>
           <p className="text-sm">- Charlie Kelly, Bird Law Expert</p>
-          <p className="text-xs mt-4 opacity-50">
+          <p className="mt-4 text-xs opacity-50">
             Bird Law is not governed by reason. Use at your own risk.
           </p>
         </footer>
